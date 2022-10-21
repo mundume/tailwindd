@@ -25,8 +25,6 @@ if(searchText){
      
     })
    })
-}else{
-  
 }
   
 })
