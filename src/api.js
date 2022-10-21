@@ -24,12 +24,7 @@ class Api {
         const res = await response.json()
         return res
     }
-    async search(param){
-        
-        const response = await fetch(this.param)
-        const res = await response.json()
-        return res
-    }
+    
    
 }
 
