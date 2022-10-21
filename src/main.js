@@ -9,8 +9,28 @@ const ui = new UI
 const input = document.querySelector('input')
 input.addEventListener('keyup', (e)=>{
  const searchText = e.target.value
- 
+if(searchText){
+  ui.clear()
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=8e0b116be1777a1303706d69ee895eb3`
+  const param = `${url}&query=${searchText}`
+   async function dataa(){
+    const res = await fetch(param)
+    const response = await res.json()
+    return response
+   }
+   dataa().then(data=>{
+    const k = data.results
+    k.forEach(item=>{
+      ui.showSearch(item) 
+     
+    })
+   })
+}else{
+  
+}
+  
 })
+
 
 api.getTv()
 .then(data=>{
